@@ -26,7 +26,7 @@ public class OrderClient {
     private RestTemplate restTemplate;
 
     public void create(String userId, String commodityCode, int orderCount) {
-        String url = "http://127.0.0.1:8082/api/order/debit?userId=" + userId + "&commodityCode=" + commodityCode
+        String url = "http://order-service:8082/api/order/debit?userId=" + userId + "&commodityCode=" + commodityCode
             + "&count=" + orderCount;
         try {
             restTemplate.getForEntity(url, Void.class);
