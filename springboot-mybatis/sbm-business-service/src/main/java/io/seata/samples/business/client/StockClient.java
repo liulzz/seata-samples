@@ -28,7 +28,7 @@ public class StockClient {
 
     public void deduct(String commodityCode, int orderCount) {
         System.out.println("business to stock " + RootContext.getXID());
-        String url = "stock-service:8081/api/stock/deduct?commodityCode=" + commodityCode + "&count=" + orderCount;
+        String url = "http://stock-service:8081/api/stock/deduct?commodityCode=" + commodityCode + "&count=" + orderCount;
         try {
             restTemplate.getForEntity(url, Void.class);
         } catch (Exception e) {
